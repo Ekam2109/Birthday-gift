@@ -319,6 +319,173 @@ button:active {
         max-width: 100%;
     }
 }
+    /* ===== BIRTHDAY CAT ===== */
+
+.birthday-cat {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: floatCat 3s ease-in-out infinite;
+}
+
+.cat {
+    font-size: 80px;
+    position: relative;
+    z-index: 2;
+    animation: catBounce 2s ease-in-out infinite;
+}
+
+.cake {
+    position: absolute;
+    font-size: 55px;
+    bottom: 5px;
+    right: 25px;
+    z-index: 3;
+}
+
+.candle {
+    position: absolute;
+    font-size: 28px;
+    bottom: 58px;
+    right: 38px;
+    z-index: 4;
+    animation: candleGlow 0.8s ease-in-out infinite alternate;
+}
+
+.sparkles {
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+
+/* ===== 8:45 PM MOMENT ===== */
+
+.birth-moment {
+    width: 88%;
+    max-width: 520px;
+    margin: 20px auto 35px;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    animation: momentAppear 1.5s ease forwards;
+}
+
+.moment-stars {
+    font-size: 20px;
+    letter-spacing: 10px;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.moment-title {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.birth-moment p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 14px 0;
+}
+
+.birth-moment strong {
+    font-size: 22px;
+}
+
+.moment-line {
+    width: 65%;
+    height: 1px;
+    margin: 18px auto;
+    background: currentColor;
+    opacity: 0.25;
+}
+
+.moment-heart {
+    display: inline-block;
+    font-size: 38px;
+    animation: heartBeat 1.4s ease-in-out infinite;
+}
+
+.moment-small {
+    font-size: 13px !important;
+    opacity: 0.8;
+}
+
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes floatCat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes catBounce {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+}
+
+@keyframes candleGlow {
+    from {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes momentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
 </style>
 </head>
 
@@ -341,7 +508,34 @@ button:active {
         <div class="name">
             HAPPY BIRTHDAY KAMAL 💖
         </div>
+<div class="birthday-cat">
+    <div class="cat">🐱</div>
+    <div class="cake">🎂</div>
+    <div class="candle">🕯️</div>
+    <div class="sparkles">✨ ✨ ✨</div>
+</div>
 
+<div class="birth-moment">
+    <div class="moment-stars">✦ ✧ ✦</div>
+
+    <div class="moment-title">
+        ✨ The Moment You Arrived ✨
+    </div>
+
+    <p>
+        At exactly <strong>8:45 PM</strong> 🕗
+        <br>
+        the world became a little more special...
+    </p>
+
+    <div class="moment-line"></div>
+
+    <span class="moment-heart">♡</span>
+
+    <p class="moment-small">
+        And that moment is worth celebrating forever. 🎂
+    </p>
+</div>
         <p class="intro">
             Today isn't just another day... today is the day the world got
             a little more beautiful, funny, chaotic and amazing because
