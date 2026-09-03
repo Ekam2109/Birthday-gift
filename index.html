@@ -476,7 +476,60 @@ button:active {
         transform: translateY(0);
     }
 }
+/* ===== 8:45 PM TIME ANIMATION ===== */
 
+.time-orbit {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 18px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-glow {
+    position: relative;
+    z-index: 2;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: timePulse 2s ease-in-out infinite;
+}
+
+.time-ring {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.35;
+    animation: ringPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes timePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+@keyframes ringPulse {
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.5;
+    }
+}
 @keyframes heartBeat {
     0%, 100% {
         transform: scale(1);
@@ -486,6 +539,101 @@ button:active {
         transform: scale(1.18);
     }
 }
+/* ===== APPRECIATION FLIP CARDS ===== */
+
+.appreciation-section {
+    width: 90%;
+    max-width: 700px;
+    margin: 35px auto;
+    text-align: center;
+}
+
+.appreciation-title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tap-hint {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 20px;
+}
+
+.flip-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.flip-card {
+    width: 100%;
+    max-width: 330px;
+    height: 190px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.flip-card-front {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.card-tap {
+    font-size: 12px;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+.flip-card-back p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}    
 </style>
 </head>
 
@@ -519,8 +667,13 @@ button:active {
     <div class="moment-stars">✦ ✧ ✦</div>
 
     <div class="moment-title">
-        ✨ The Moment You Arrived ✨
-    </div>
+    ✨ THE MOMENT YOU ARRIVED ✨
+</div>
+
+<div class="time-orbit">
+    <div class="time-glow">8:45 PM</div>
+    <div class="time-ring"></div>
+</div>
 
     <p>
         At exactly <strong>8:45 PM</strong> 🕗
@@ -535,6 +688,85 @@ button:active {
     <p class="moment-small">
         And that moment is worth celebrating forever. 🎂
     </p>
+</div>
+       <!-- ===== APPRECIATION FLIP CARDS ===== -->
+
+<div class="appreciation-section">
+
+    <div class="appreciation-title">
+        💗 THINGS I APPRECIATE ABOUT YOU 💗
+    </div>
+
+    <p class="tap-hint">Tap a card to reveal something ✨</p>
+
+    <div class="flip-cards">
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <div class="card-icon">💗</div>
+                    <div class="card-title">CARING</div>
+                    <div class="card-tap">Tap me ✨</div>
+                </div>
+
+                <div class="flip-card-back">
+                    <div class="card-icon">❤️</div>
+                    <p>
+                        You care in the little ways, even when you don't say much.
+                        Somehow, you always make people feel looked after.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <div class="card-icon">🤍</div>
+                    <div class="card-title">SUPPORTIVE</div>
+                    <div class="card-tap">Tap me ✨</div>
+                </div>
+
+                <div class="flip-card-back">
+                    <div class="card-icon">🫶</div>
+                    <p>
+                        You're the kind of person who stays.
+                        You support me even when I don't know how to explain
+                        what I'm feeling.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <div class="card-icon">🫶</div>
+                    <div class="card-title">YOU JUST KNOW</div>
+                    <div class="card-tap">Tap me ✨</div>
+                </div>
+
+                <div class="flip-card-back">
+                    <div class="card-icon">💞</div>
+                    <p>
+                        Somehow you know what's in my heart
+                        even when I haven't said a word.
+                        That's something really special about you.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
 </div>
         <p class="intro">
             Today isn't just another day... today is the day the world got
