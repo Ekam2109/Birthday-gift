@@ -633,7 +633,98 @@ button:active {
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
-}    
+}
+
+/* ===== PERSONAL LETTER DESIGN ===== */
+
+.personal-letter {
+    width: 90%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 28px 22px;
+    box-sizing: border-box;
+    border-radius: 28px;
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+
+    animation: letterAppear 1.4s ease forwards;
+}
+
+.letter-decoration {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.letter-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.letter-content {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.letter-content p {
+    margin: 0 0 20px 0;
+}
+
+.letter-content p:first-child {
+    text-align: center;
+    font-size: 22px;
+}
+
+.letter-ending {
+    text-align: center;
+    margin-top: 30px !important;
+    line-height: 1.8;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE LETTER ===== */
+
+@media (max-width: 600px) {
+
+    .personal-letter {
+        width: 92%;
+        padding: 24px 17px;
+        border-radius: 24px;
+    }
+
+    .letter-title {
+        font-size: 22px;
+    }
+
+    .letter-content {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .letter-content p:first-child {
+        font-size: 20px;
+    }
+}
 </style>
 </head>
 
@@ -796,6 +887,79 @@ button:active {
 
             <h2>🎊 SURPRISEEEE! 🎊</h2>
 
+            <div class="personal-letter">
+
+    <div class="letter-decoration">💌 ✨ 💗</div>
+
+    <div class="letter-title">
+        A Little Letter For You 💕
+    </div>
+
+    <div class="letter-content">
+
+        <p>
+            <b>Mere bugge! 💖</b>
+        </p>
+
+        <p>
+            You are the only person whom I can never afford to lose.
+            Appa kine ladde, appne vich kinia misunderstandings hoyia,
+            kina time ek duje toh door rhe, but the best part is ke
+            appa sara kujh khtm karke fer kathe aa, ek duje de naal aa. 🥹💗
+            Mnu bss tu hi chahidi aa avde dukh dassn nu, te mai v tere dukh ch
+            hmesha naal khdn nu tyaar aa. ❤️
+        </p>
+
+        <p>
+            I just remember the day jdo aapa strangers c, ek dujje nu jande ni c,
+            te ajj appa ek duje nu bina kujh dasse dil dia padh skde aa. ✨💌
+            Eh soch ke hi kina special lagda aa ke jithe asi strangers c,
+            ajj othe asi ek duje nu inni changi tarah samajhde aa.
+        </p>
+
+        <p>
+            Loka de ta relationships v eni der ni chlade jinni strong apni dosti aa.
+            Bss Rbb kre apne vich eh pyaar, eh dosti eda hi rve te kuch v kade
+            change na hove. 🧿❣️ Bss ek duje de dukh-sukh ch hmesha naal rhiye.
+            Sukh ch ta har koi aa jnda, asli gall ta odo hundi aa jdo dukh ch
+            koi naal khad da. 🥹
+        </p>
+
+        <p>
+            Bss tnu hmesha khush vekhna chona.
+            Teri khushi mere lyi bohot matter kardi aa, te tere lyi hmesha
+            hajar aa—teri khushi lyi kujh v. 🥹💗❤️
+        </p>
+
+        <p>
+            Mnu avde aap te ena yakin aa ke je ajj toh 10 saal baad v tu mnu
+            yaad karke khe gi, <b>“Teri lod aa,”</b> ta tere ek kehn te mai tere
+            kol aa ju ga. 🫠💗 Chahe time kina v langh jaave, kujh cheezaan
+            kade change ni hundia.
+        </p>
+
+        <p>
+            Jo v eni der hogi ladn toh baad tnu kyi vaar bhulna chaya,
+            par bndriye, ajj v pyaar ona hi aa jina day one te c ga. 🤧❤️
+            Shayad time, distance te misunderstandings bohot kujh badal
+            sakde ne, par apni dosti mere lyi ajj v ohi aa.
+        </p>
+
+        <p>
+            Bss ena hi chahida aa ke asi hmesha ek duje de naal rahiye,
+            ek duje nu samjhiye, te chahe life sanu kithe v le jaave,
+            apni eh dosti te eh pyaar eda hi bnya rve. 🧿💌
+        </p>
+
+        <p class="letter-ending">
+            <b>Happy birthday, ullu 🦉</b>
+            <br>
+            <b>Always love from my heart..💌❣️</b>
+        </p>
+
+    </div>
+
+</div>
             <p>
 
                 I just want you to know that you're genuinely one of those
