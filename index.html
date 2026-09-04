@@ -728,6 +728,100 @@ button:active {
         font-size: 20px;
     }
 }
+
+    /* ===== CLICKABLE LETTER ENVELOPE ===== */
+
+.letter-envelope-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.envelope {
+    width: 90%;
+    max-width: 520px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.envelope-hint {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #5a1638;
+    font-weight: bold;
+}
+
+.envelope-body {
+    position: relative;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    padding: 35px 18px 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    overflow: hidden;
+}
+
+/* Closed envelope flap */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.9);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 3;
+}
+
+/* Letter hidden initially */
+.letter-inside {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(30px);
+    transition:
+        max-height 1.2s ease,
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Open envelope */
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter-inside {
+    max-height: 4000px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Letter design */
+.letter-inside {
+    color: #5a1638;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 18px;
+    padding: 25px 18px;
+    text-align: left;
+}
+
+.envelope.open .envelope-hint {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .envelope {
+        width: 95%;
+    }
+
+    .letter-inside {
+        padding: 22px 15px;
+    }
+}
 </style>
 </head>
 
@@ -890,15 +984,27 @@ button:active {
 
             <h2>🎊 SURPRISEEEE! 🎊</h2>
 
-            <div class="personal-letter">
+            <div class="letter-envelope-wrapper">
 
-    <div class="letter-decoration">💌 ✨ 💗</div>
+    <div class="envelope" onclick="this.classList.toggle('open')">
 
-    <div class="letter-title">
-        A Little Letter For You 💕
-    </div>
+        <div class="envelope-hint">
+            💌 Tap to open your letter 💌
+        </div>
 
-    <div class="letter-content">
+        <div class="envelope-body">
+            <div class="envelope-flap"></div>
+
+            <div class="letter-inside">
+
+                <div class="letter-decoration">💌 ✨ 💗</div>
+
+                <div class="letter-title">
+                    A Little Letter For You 💕
+                </div>
+
+                <div class="letter-content">
+
 
         <p>
             <b>Mere bugge! 💖</b>
@@ -960,10 +1066,17 @@ button:active {
             <b>Always love from my heart..💌❣️</b>
         </p>
 
+                       </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
-            <p>
+                    
+      <p>
 
                 I just want you to know that you're genuinely one of those
                 people who makes life better simply by being in it.
